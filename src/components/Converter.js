@@ -14,11 +14,21 @@ function Converter() {
         setHexColor(e.target.value);
 
         if (e.target.value.length === 7) {
-            e.target.form.requestSubmit();
-            console.log(e.target.value)
-            console.log(hexColor)
-
+            // e.target.form.requestSubmit();
+            // console.log(e.target.value)
+            // console.log(hexColor)
+            changeToRGB(e.target.value)
         }
+    }
+
+    const changeToRGB = (color) => {
+        if (isHexColorValid(color) === false) {
+            return;
+        }
+
+        setError(false);
+        const convertedColor = convertToRGB(color);
+        setRgbColor(convertedColor);
     }
 
     const onSubmit = (e) => {
