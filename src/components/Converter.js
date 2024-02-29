@@ -12,6 +12,13 @@ function Converter() {
 
     const onValueChange = (e) => {
         setHexColor(e.target.value);
+
+        if (e.target.value.length === 7) {
+            e.target.form.requestSubmit();
+            console.log(e.target.value)
+            console.log(hexColor)
+
+        }
     }
 
     const onSubmit = (e) => {
